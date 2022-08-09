@@ -7,7 +7,9 @@ const closeButton = document.querySelector(".close_btn");
 const shareButton = document.querySelector(".share_btn");
 const loading = document.querySelector(".result_loading");
 
-function calculator() {
+
+function calculator() 
+{
     const fieldValue = document.querySelector("#field_value");
     let timeValue = document.querySelector("#time_value");
     let timeValue_int = Number(timeValue.value);
@@ -15,15 +17,22 @@ function calculator() {
     const fieldResult = document.querySelector(".field_result");
     const timeResult = document.querySelector(".time_result");
 
-    if(fieldValue.value == "") {
+    if(fieldValue.value == "") 
+    {
         alert('입력되지 않았습니다.');
         fieldValue.focus();
         return false;
-    } else if (timeValue.value== "") {
+    } 
+
+    else if (timeValue.value== "") 
+    {
         alert('입력되지 않았습니다.');
         timeValue.focus();
         return false;
-    } else if (timeValue_int > 24) {
+    } 
+
+    else if (timeValue_int > 24) 
+    {
         alert('잘못된 값입니다. 24이하의 값을 입력해 주세요.');
         return false;
     }
@@ -31,7 +40,8 @@ function calculator() {
     result.style.display = "none";
     loading.style.display = "flex";
 
-    setTimeout(function() {
+    setTimeout(function() 
+    {
         loading.style.display = "none";
         result.style.display = "flex";
         fieldResult.innerText = fieldValue.value;
@@ -39,21 +49,25 @@ function calculator() {
     }, 1800);   
 }
 
-function openModal() {
+function openModal() 
+{
     modal.style.display = "flex";
 }
 
-function closeModal() {
+function closeModal() 
+{
     modal.style.display = "none";
 }
 
-window.onclick = function (event) {
+window.onclick = function (event) 
+{
     if(event.target == modal) {
         closeModal();
     }
 };
 
-function copyUrl() {
+function copyUrl() 
+{
     let url = window.location.href;
     let tmp = document.createElement('input');
     
